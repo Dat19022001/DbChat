@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("idChat");
             $table->string("idSent");
             $table->string("idReceived");
-            $table->string("content");
+            $table->text("content");
             $table->unsignedBigInteger('date_sent')->nullable();
             $table->unsignedBigInteger('date_received')->nullable();
             $table->unsignedBigInteger('date_read')->nullable();

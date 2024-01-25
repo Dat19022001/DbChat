@@ -5,18 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class RoomChat extends Model
 {
     use HasFactory;
-    protected $table = 'Users';
+    protected $table = 'RoomChats';
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'idFriend', 'idUser');
+    }
     protected $fillable = [
-        'UserName',
         'idUser',
-        'listFriend',
-    ];
-
-    protected $casts = [
-        'listFriend' => 'json',
+        'idFriend',
     ];
 }
-
